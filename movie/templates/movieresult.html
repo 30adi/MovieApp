@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ Title }}</title>
+    {% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+
+</head>
+<body>
+  <div class="container" >
+    <div class="movie-info">
+        <img src="{{ Poster }}"></n>
+        <h3>{{ Title }}</h3>
+
+        <span class="red">{{ imdbRating }}</span>
+    </div>
+    <div class="overview">
+        <h3>Overview</h3>
+        {{ Ratings}}<br>
+
+            {{ Genre }}<br>
+            IMDB Rating : {{ imdbRating }}
+    </div>
+  </div>
+</body>
+</html>
