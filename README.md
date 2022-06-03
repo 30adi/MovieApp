@@ -7,3 +7,5 @@ pip install django
 pip install pyrebase4
 
 pip install requests
+
+python manage.py runserver
