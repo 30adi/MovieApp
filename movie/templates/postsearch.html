@@ -7,14 +7,17 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
 </head>
 <body>
-        <header>
-        <form id="form" action='/apidata/' method="post">
-            {% csrf_token %}
-            <input type="search"  id="search" class="search" name="search" placeholder="Search">
-        </form>
+      <header>
+        <nav class="row">
+            <a href="{% url movie.views.home }" style="text-decoration:None"><h1>MOVIE TIME</h1></a>
+            <form id="form" action='/apidata/' method="post">
+                {% csrf_token %}
+                <input type="search"  id="search" class="search" name="search" placeholder="Search">
+            </form>
+        </nav>
     </header> 
     <div class="container">
-        <h1>{{ Title }}</h1>
+
 
             <div class="movie" >
                 <a href="{% url 'movie_result' %}">
@@ -34,6 +37,17 @@
             </div>
 
     </div>
+      <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="copyright" style="text-align:center">
+                            <p>Copyright &copy; 2022 <a href="{% url movie.views.home }"> - MOVIE TIME</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
     <script src="{% static 'js/script.js' %}"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>

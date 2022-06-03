@@ -3,50 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <title>Movie App</title>
+    <title>MOVIE TIME</title>
      {% load static %}
     <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
 </head>
 <body >
     <header>
-        <form id="form" action='/apidata/' method="post">
-            {% csrf_token %}
-            <input type="search"  id="search" class="search" name="search" placeholder="Search">
-        </form>
+        <nav class="row">
+            <a href="{% url movie.views.home }" style="text-decoration:None"><h1>MOVIE TIME</h1></a>
+            <form id="form" action='/apidata/' method="post">
+                {% csrf_token %}
+                <input type="search"  id="search" class="search" name="search" placeholder="Search">
+            </form>
+        </nav>
     </header>
 
     <main id="main">
-        {% for i in name %}
+        {% for i in n %}
+        <div class="col">
+            <div class=" movie">
 
-        <div class="movie">
-            <a href="{% url 'index_to_movieresult' %}">
-                <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW92aWV8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60" alt="">
+                <a href="http://127.0.0.1:8000/index_to_movieresult/{{ i.0 }}">
+                    <img src="{{ i.1 }}" style="height:380px;" alt="">
 
-                <div class="movie-info">
-                    <h3 style="text-transform: uppercase;" name="movie_name_value" value="{{ i }}">{{ i }}</h3>
-                    <span class="red">3.8</span>
-                </div>
-                <div class="overview">
-                    <h3>Overview</h3>
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor
-                </div>
-            </a>
+                    <div class="movie-info">
+                        <h3 style="text-transform: uppercase;" name="movie_name_value" value="{{ i.0 }}">{{ i.0 }}</h3>
+                        <span class="red">{{i.2}}</span>
+                    </div>
+                    <div class="overview">
+                        <h3>Overview</h3>
+                        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor
+                    </div>
+                </a>
+
+            </div>
         </div>
         {% endfor %}
-        <div class="movie">
-            <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bW92aWV8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60" alt="">
 
-            <div class="movie-info">
-                <h3>Movie Title 3</h3>
-                <span class="red">3.8</span>
-            </div>
-            <div class="overview">
-                <h3>Overview</h3>
-                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor
-            </div>
-        </div>
 
     </main>
+
+    <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="copyright" style="text-align:center">
+                            <p>Copyright &copy; 2022 <a href="{% url movie.views.home }"> - MOVIE TIME</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
 
         <script src="{% static 'js/script.js' %}"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
