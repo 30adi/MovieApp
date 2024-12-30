@@ -6,14 +6,14 @@ import random
 
 
 Config = {
-  'apiKey': "AIzaSyC-jhr5utEUYnqK1sfgnc8pSRaBifDRHog",
-    'authDomain': "movie-f4e8b.firebaseapp.com",
-    'projectId': "movie-f4e8b",
-    'storageBucket': "movie-f4e8b.appspot.com",
-    'messagingSenderId': "359849985960",
-    'appId': "1:359849985960:web:7ccdc7c56a9c0b8d3bbf9d",
-    'measurementId': "G-C53JWXDZ42",
-    'databaseURL' : "https://movie-f4e8b-default-rtdb.firebaseio.com",
+  'apiKey': "AIzaSyDSpwrtsj2njJ6QugTiX0MC5zij-WOaJFI",
+    'authDomain': "movie-8ced9.firebaseapp.com",
+    'projectId': "movie-8ced9",
+    'storageBucket': "movie-8ced9.firebasestorage.app",
+    'messagingSenderId': "811641192284",
+    'appId': "1:811641192284:web:b31d7acb31277853d38b99",
+    'measurementId': "G-9M1Q8SFTJR",
+    'databaseURL' : "https://movie-8ced9-default-rtdb.firebaseio.com/"
 }
 firebase = pyrebase.initialize_app(Config)
 database = firebase.database()
